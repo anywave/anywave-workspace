@@ -1,0 +1,49 @@
+{
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
+    "https://www.googleapis.com/auth/documents.readonly",
+    "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "https://www.googleapis.com/auth/userinfo.email"
+  ],
+  "addOns": {
+    "common": {
+      "name": "ANYWAVE AI",
+      "logoUrl": "https://anywavecreations.com/anywavelogo.png",
+      "layoutProperties": {
+        "primaryColor": "#6366f1",
+        "secondaryColor": "#818cf8"
+      },
+      "homepageTrigger": {
+        "runFunction": "https://anywave-workspace-HASH-uc.a.run.app/homepage"
+      },
+      "universalActions": [
+        {
+          "label": "Settings",
+          "runFunction": "https://anywave-workspace-HASH-uc.a.run.app/settings"
+        },
+        {
+          "label": "Help",
+          "openLink": "https://github.com/anywavecreations/anywave-workspace"
+        }
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "https://anywave-workspace-HASH-uc.a.run.app/gmail/contextual"
+        }
+      ]
+    },
+    "docs": {
+      "onFileScopeGrantedTrigger": {
+        "runFunction": "https://anywave-workspace-HASH-uc.a.run.app/docs/contextual"
+      }
+    },
+    "sheets": {
+      "onFileScopeGrantedTrigger": {
+        "runFunction": "https://anywave-workspace-HASH-uc.a.run.app/sheets/contextual"
+      }
+    }
+  }
+}

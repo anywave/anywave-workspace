@@ -1,0 +1,31 @@
+{
+  "name": "anywave-workspace",
+  "version": "0.1.0",
+  "description": "ANYWAVE AI-powered Google Workspace Add-on — smart email drafting, document analysis, and data processing with optional private local inference via MOBIUS mesh",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint src/",
+    "test": "vitest run",
+    "deploy": "gcloud run deploy anywave-workspace --source . --region us-central1"
+  },
+  "author": "ANYWAVE Creations",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.0",
+    "@google-cloud/aiplatform": "^3.0.0",
+    "stripe": "^17.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "vitest": "^2.1.0",
+    "eslint": "^9.0.0"
+  }
+}
