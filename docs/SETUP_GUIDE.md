@@ -26,7 +26,7 @@ docker --version  # Should show Docker version
 ## 1. Clone and Install
 
 ```bash
-git clone https://github.com/anywavecreations/anywave-workspace.git
+git clone https://github.com/anywave/anywave-workspace.git
 cd anywave-workspace
 npm install
 ```
@@ -52,7 +52,8 @@ ANTHROPIC_API_KEY=your-anthropic-api-key
 OPENAI_API_KEY=your-openai-api-key
 
 # MOBIUS (optional, for mesh integration testing)
-MOBIUS_ENDPOINT=http://localhost:8090
+MOBIUS_GATEWAY_URL=http://localhost:8090
+MOBIUS_MESH_ENABLED=false
 
 # Server
 PORT=8080
@@ -106,14 +107,14 @@ gcloud iam service-accounts create anywave-workspace \
   --display-name="ANYWAVE Workspace Add-on"
 
 # Grant necessary roles
-gcloud projects add-iam-policy-binding anywave-workspace-dev \
-  --member="serviceAccount:anywave-workspace@anywave-workspace-dev.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding <PROJECT_ID> \
+  --member="serviceAccount:<SERVICE_ACCOUNT_NAME>@<PROJECT_ID>.iam.gserviceaccount.com" \
   --role="roles/secretmanager.secretAccessor"
 
 # Generate a key file for local development
 mkdir -p credentials
 gcloud iam service-accounts keys create credentials/service-account.json \
-  --iam-account=anywave-workspace@anywave-workspace-dev.iam.gserviceaccount.com
+  --iam-account=<SERVICE_ACCOUNT_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
 ```
 
 **Important**: Never commit `credentials/service-account.json` to version control. It is already listed in `.gitignore`.
@@ -396,13 +397,7 @@ After approval:
 
 ## 9. Continuous Deployment
 
-The repository includes GitHub Actions workflows for CI/CD:
-
-- **On pull request**: Run tests, lint, and type-check
-- **On merge to main**: Build, push container, and deploy to staging
-- **On release tag**: Deploy to production
-
-See `.github/workflows/` for workflow definitions.
+No CI/CD workflows are included yet. `deployment/cloudbuild.yaml` builds and deploys the container to Cloud Run when run with `gcloud builds submit`; `npm run deploy` deploys from source.
 
 ## Troubleshooting
 

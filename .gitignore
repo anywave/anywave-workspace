@@ -3,3 +3,16 @@ dist/
 .env
 *.log
 .DS_Store
+
+# Credentials (never commit)
+credentials/
+credentials.json
+*.pem
+
+# Local editor / agent tooling state
+.claude/
+.claude-dev-helper/
+.plugin-config/
+.complexity-log.md
+.session-summary.md
+.todos-report.md/
