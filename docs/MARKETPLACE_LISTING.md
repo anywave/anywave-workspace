@@ -56,27 +56,25 @@ ANYWAVE AI gives you the freedom to choose. Select from three leading AI provide
 
 Switch providers at any time from the settings panel. Your choice, your control.
 
-### MOBIUS Mesh: True Local Processing
+### MOBIUS Mesh: Inference on Your Own Hardware (planned)
 
-For organizations with strict data requirements, ANYWAVE AI integrates with **MOBIUS** — our peer-to-peer mesh computing platform. When MOBIUS is enabled:
+ANYWAVE AI is designed to route requests to **MOBIUS**, our peer-to-peer local-inference platform, instead of a cloud AI provider. This routing is scaffolded but not yet released. When it ships:
 
-- **All AI processing happens on your own hardware** — nothing leaves your network
-- Your data never touches a cloud AI service
-- You maintain complete control over your information
-- Ideal for legal, medical, financial, and government environments
+- The model runs on a MOBIUS gateway you operate, not on a cloud AI service
+- The add-on backend still relays the request, because Google Workspace Add-ons call a hosted HTTPS endpoint
+- You choose which gateway the add-on talks to
 
-MOBIUS mesh is available on the Pro tier. Learn more at [anywavecreations.com/mobius](https://anywavecreations.com/mobius).
+Availability and tier will be announced at release.
 
 ### Privacy You Can Trust
 
 We built ANYWAVE AI with privacy as a core principle, not an afterthought:
 
-- **Email and document content is never stored** — processed in-memory only
-- **No data is sold to third parties** — ever
-- **GDPR and CCPA compliant**
-- **Full data deletion on request**
+- **Email and document content is not written to storage by the add-on** — it is processed in memory and sent to the AI provider you select
+- **No data is sold to third parties**
+- **Data deletion on request**
 
-Read our complete Privacy Policy at [anywavecreations.com/workspace/privacy](https://anywavecreations.com/workspace/privacy).
+The privacy policy for this add-on will be published before the Marketplace listing goes live (draft: `docs/privacy-policy.md`, pending review).
 
 ### Free to Start
 
@@ -103,13 +101,13 @@ Productivity
 3. Formula generation from natural language
 4. Presentation speaker notes generation
 5. Multi-provider AI (Gemini, Claude, OpenAI)
-6. MOBIUS local mesh processing option
-7. Privacy-first — content never stored
+6. MOBIUS local-inference routing (planned)
+7. Content processed in memory, not stored by the add-on
 8. Free tier with 50 requests/month
 
 ## URLs
 
-- **Support URL**: https://github.com/anywavecreations/anywave-workspace/issues
+- **Support URL**: https://github.com/anywave/anywave-workspace/issues
 - **Privacy Policy URL**: https://anywavecreations.com/workspace/privacy
 - **Terms of Service URL**: https://anywavecreations.com/workspace/terms
 - **Website**: https://anywavecreations.com
@@ -147,7 +145,7 @@ The following screenshots should be captured for the listing. Google Workspace M
 - Show the ANYWAVE AI settings panel
 - Display the AI provider dropdown with Gemini, Claude, and OpenAI options
 - Show the MOBIUS mesh toggle
-- Caption: "Choose your AI provider or go fully local with MOBIUS"
+- Caption: "Choose your AI provider"
 
 ### Screenshot 5: Privacy Dashboard
 - Show the settings panel with the privacy section

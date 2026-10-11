@@ -1,7 +1,7 @@
 {
   "name": "anywave-workspace",
   "version": "0.1.0",
-  "description": "ANYWAVE AI-powered Google Workspace Add-on — smart email drafting, document analysis, and data processing with optional private local inference via MOBIUS mesh",
+  "description": "ANYWAVE AI-powered Google Workspace Add-on — smart email drafting, document analysis, and data processing with planned MOBIUS local-inference routing",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",

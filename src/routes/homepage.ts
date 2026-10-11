@@ -27,7 +27,7 @@ homepageRouter.post('/', (req, res) => {
         labeled('Plan', 'Free (50 requests/month)'),
         buttons(
           linkButton('Upgrade', 'https://anywavecreations.com/workspace/pricing'),
-          linkButton('Documentation', 'https://github.com/anywavecreations/anywave-workspace')
+          linkButton('Documentation', 'https://github.com/anywave/anywave-workspace')
         ),
       ),
     ],
